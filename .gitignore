@@ -8,3 +8,6 @@ build/
 *.zip
 *.rar
 *.exe
+
+.env*
+.freebuff/
