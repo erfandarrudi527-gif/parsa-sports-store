@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جزئیات محصول | پوشاک و تجهیزات ورزشی ولیعصر</title>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-top: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .detail-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .main-img-box {
+      width: 100%;
+      height: 420px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: var(--surface-alt);
+      border: 1px solid var(--border);
+    }
+    .main-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .detail-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .category-breadcrumb {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .detail-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .price-box-detail {
+      background-color: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .size-selector {
+      margin-bottom: 24px;
+    }
+    .size-selector h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .size-options {
+      display: flex;
+      gap: 10px;
+    }
+    .size-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .size-btn:hover, .size-btn.active {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    
+    .quantity-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    
+    .qty-counter {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: var(--surface);
+    }
+    .qty-btn {
+      width: 42px;
+      height: 42px;
+      background: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .qty-btn:hover { background-color: var(--surface-alt); }
+    .qty-input {
+      width: 50px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    
+    .features-list {
+      margin-top: 20px;
+      background-color: var(--bg);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .features-list h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .features-list ul li {
+      position: relative;
+      padding-right: 20px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .features-list ul li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    @media (max-width: 850px) {
+      .product-detail-layout { grid-template-columns: 1fr; padding: 20px; }
+      .main-img-box { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Announcement -->
+  <div class="top-announcement">
+    <div class="container">
+      <span><i class="ph ph-sparkle"></i> ارسال اکسپرس:</span> برای خریدهای فوق با ضمانت تعویض سایز!
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو فروشگاه ولیعصر" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html" class="active"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="login.html" class="btn-auth-nav">
+            <i class="ph ph-user"></i> <span>ورود / ثبت‌نام</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Product Detail Container -->
+  <div class="container">
+    <div id="product-detail-wrapper">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Related Products -->
+    <section class="section-padding">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>محصولات مرتبط</h2>
+          <p>شاید این محصولات نیز مورد توجه شما قرار گیرند</p>
+        </div>
+      </div>
+      <div class="products-grid" id="related-products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>پوشاک ورزشی ولیعصر</h3>
+          <p class="footer-desc">تامین‌کننده تخصصی تجهیزات ورزشی و لباس‌های باشگاهی در مشهد.</p>
+        </div>
+        <div class="footer-col">
+          <h3>لینک‌های مفید</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">صفحه اصلی</a></li>
+            <li><a href="products.html">فروشگاه</a></li>
+            <li><a href="cart.html">سبد خرید</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>تمامی حقوق محفوظ است © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    let currentQty = 1;
+    let selectedSize = 'L';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = parseInt(urlParams.get('id'), 10) || 1;
+
+      const product = PRODUCTS.find(p => p.id === productId) || PRODUCTS[0];
+
+      renderProductDetail(product);
+      renderRelatedProducts(product);
+    });
+
+    function renderProductDetail(product) {
+      const wrapper = document.getElementById('product-detail-wrapper');
+      const imgPath = getCorrectImagePath(product.image);
+
+      const oldPriceHtml = product.oldPrice > product.price 
+        ? `<span style="text-decoration: line-through; color: var(--text-light); font-size: 1rem;">${formatPrice(product.oldPrice)}</span>` 
+        : '';
+
+      const featuresHtml = product.features && product.features.length > 0 
+        ? `
+          <div class="features-list">
+            <h4>ویژگی‌های برجسته محصول:</h4>
+            <ul>
+              ${product.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>
+          </div>
+        ` 
+        : '';
+
+      wrapper.innerHTML = `
+        <div class="product-detail-layout">
+          <div class="detail-gallery">
+            <div class="main-img-box">
+              <img src="${imgPath}" alt="${product.name}" onError="this.src='https://via.placeholder.com/450x450?text=Sports+Item'"/>
+            </div>
+          </div>
+
+          <div class="detail-info">
+            <div class="category-breadcrumb">
+              <i class="ph ph-tag"></i> ${product.categoryName}
+            </div>
+
+            <h1 class="detail-title">${product.name}</h1>
+
+            <div class="rating-row">
+              <div style="color: var(--accent); font-weight: 800; display: flex; align-items: center; gap: 4px;">
+                <i class="ph-fill ph-star"></i>
+                <span>${product.rating} از ۵.۰</span>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.88rem;">(${product.reviewsCount} دیدگاه کاربران)</span>
+              <span style="margin-right: auto; color: var(--success); font-weight: 700; font-size: 0.85rem;"><i class="ph ph-check-circle"></i> موجود در انبار مشهد</span>
+            </div>
+
+            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+              ${product.description}
+            </p>
+
+            <div class="price-box-detail">
+              <div>
+                <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">قیمت نهایی محصول:</span>
+                <span style="font-size: 1.75rem; font-weight: 900; color: var(--primary);">${formatPrice(product.price)}</span>
+              </div>
+              <div>
+                ${oldPriceHtml}
+                ${product.discount > 0 ? `<span class="badge badge-discount" style="font-size: 0.85rem; margin-right: 8px;">${product.discount}٪ تخفیف</span>` : ''}
+              </div>
+            </div>
+
+            ${product.category === 'clothing' || product.category === 'tops' || product.category === 'swimwear' ? `
+              <div class="size-selector">
+                <h4>انتخاب سایز:</h4>
+                <div class="size-options">
+                  <button class="size-btn" onclick="selectSize(this, 'S')">S</button>
+                  <button class="size-btn" onclick="selectSize(this, 'M')">M</button>
+                  <button class="size-btn active" onclick="selectSize(this, 'L')">L</button>
+                  <button class="size-btn" onclick="selectSize(this, 'XL')">XL</button>
+                  <button class="size-btn" onclick="selectSize(this, '2XL')">2XL</button>
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="quantity-row">
+              <div class="qty-counter">
+                <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                <input type="text" class="qty-input" id="detail-qty-val" value="1" readonly />
+                <button class="qty-btn" onclick="changeQty(1)">+</button>
+              </div>
+
+              <button class="btn-primary" style="flex-grow: 1; justify-content: center; height: 48px;" onclick="addToCartDetail(${product.id})">
+                <i class="ph ph-shopping-bag"></i> افزودن به سبد خرید
+              </button>
+            </div>
+
+            ${featuresHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    function selectSize(btn, size) {
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedSize = size;
+    }
+
+    function changeQty(delta) {
+      currentQty = Math.max(1, currentQty + delta);
+      document.getElementById('detail-qty-val').value = currentQty;
+    }
+
+    function addToCartDetail(productId) {
+      window.cartStore.addItem(productId, currentQty, selectedSize);
+    }
+
+    function renderRelatedProducts(currentProduct) {
+      const container = document.getElementById('related-products-grid');
+      const related = PRODUCTS.filter(p => p.id !== currentProduct.id && p.category === currentProduct.category).slice(0, 4);
+      container.innerHTML = related.map(createProductCardHtml).join('');
+    }
+  </script>
+</body>
+</html>

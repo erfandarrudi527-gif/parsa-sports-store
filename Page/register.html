@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ثبت‌نام حساب کاربری | پوشاک ورزشی ولیعصر</title>
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .auth-card-wrapper {
+      max-width: 460px;
+      margin: 50px auto;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      box-shadow: var(--shadow-md);
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .auth-header h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .auth-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .input-with-icon { position: relative; }
+    .input-with-icon input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background-color: var(--bg);
+      font-size: 0.95rem;
+    }
+    .input-with-icon i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو"><i class="ph ph-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Register Form -->
+  <div class="container">
+    <div class="auth-card-wrapper">
+      <div class="auth-header">
+        <h2>ایجاد حساب کاربری</h2>
+        <p>به خانواده بزرگ ورزشکاران فروشگاه ولیعصر بپیوندید</p>
+      </div>
+
+      <form id="register-form" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label>نام و نام خانوادگی</label>
+          <div class="input-with-icon">
+            <input type="text" id="reg-name" placeholder="مثلا: علی محمدی" required />
+            <i class="ph ph-identification-card"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>شماره موبایل یا ایمیل</label>
+          <div class="input-with-icon">
+            <input type="text" id="reg-identifier" placeholder="09306397710" required />
+            <i class="ph ph-phone"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>رمز عبور</label>
+          <div class="input-with-icon">
+            <input type="password" id="reg-password" placeholder="حداقل ۶ کاراکتر" required />
+            <i class="ph ph-lock"></i>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; height: 48px;">
+          عضویت در سایت <i class="ph ph-user-plus"></i>
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        قبلاً ثبت‌نام کرده‌اید؟ <a href="login.html" style="color: var(--primary); font-weight: 700;">ورود به حساب</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('reg-name').value.trim();
+      const id = document.getElementById('reg-identifier').value.trim();
+      const pass = document.getElementById('reg-password').value;
+
+      const res = window.authStore.register(name, id, pass);
+      if (res.success) {
+        window.showToast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = '../index.html';
+        }, 800);
+      } else {
+        window.showToast(res.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>

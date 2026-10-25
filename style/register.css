@@ -1,0 +1,722 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+
+body {
+  background-color: #f8f8f8;
+  color: #333333;
+  font-family: "PEYDA", sans-serif;
+  line-height: 1.8;
+}
+@font-face {
+  font-family: "PEYDA";
+  src: url("/parsa/assets/fonts/PEYDA-EXTRABOLD.TTF");
+}
+
+@font-face {
+  font-family: "BONYAD";
+  src: url("/parsa/assets/fonts/BonyadeKoodakKoochak-Regular.ttf");
+}
+
+/* =========================
+   COLOR VARIABLES
+========================= */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b9931f;
+  --gold-light: #f3df9b;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray: #d9d9d9;
+  --dark-gray: #666666;
+  --text: #222222;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+}
+
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #F7F1E3;
+  box-shadow: 0 0 10px 0 #E6B31E;
+}
+
+header > nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+header > nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > nav > div > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-item:hover{
+  color: #000000;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.logo-on-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.logo {
+  width: 150px;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.text-on-the-left-logo {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px 15px;
+  line-height: 22px;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: "PEYDA";
+  background-color: #E6B31E;
+  color: #000000;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-right: 40px;
+}
+
+.profile-icon img {
+  width: 60px;
+}
+
+.navbar-items img {
+  width: 35px;
+}
+
+.navbar-item > a {
+  color: #000000 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-item {
+  font-family: "PEYDA";
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 30px;
+  background-color: #E6B31E;
+  color: #000000;
+}
+
+.navbar-in-header-t {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.profile-icon {
+  width: 190px;
+}
+
+.call-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-text-and-number {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  background-color: #E6B31E;
+  font-family: "BONYAD";
+  color: #000000;
+}
+/* =========================
+   GENERAL CONTAINERS
+========================= */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "PEYDA";
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+.rooms-container,
+.room-container,
+.product-container,
+.products-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 30px 0;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.room-cart {
+  background-color: var(--white);
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.room-cart:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.room-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background-color: #eee;
+}
+
+.room-cart h2 {
+  font-size: 20px;
+  color: var(--text);
+  padding: 16px 16px 8px;
+  font-family: "PEYDA";
+}
+
+.room-information {
+  padding: 0 16px;
+  color: var(--dark-gray);
+  font-size: 14px;
+  min-height: 24px;
+}
+
+.room-price-and-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.room-price-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.room-price-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+.room-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0;
+}
+
+/* =========================
+   PRODUCT DETAIL
+========================= */
+.product-detail-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.product-detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background-color: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #eee;
+}
+
+.product-detail-image {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.product-detail-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-detail-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.product-detail-price {
+  font-size: 22px;
+  color: var(--gold-dark);
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.product-detail-description {
+  font-size: 16px;
+  color: var(--dark-gray);
+  line-height: 2;
+  margin-bottom: 24px;
+}
+
+.back-btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 12px 20px;
+  background-color: var(--gold);
+  color: var(--white);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: var(--gold-dark);
+}
+
+/* =========================
+   AUTH FORM
+========================= */
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  margin: 50px auto;
+  background-color: #1f1f1f;
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.auth-header h1 {
+  color: var(--white);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #eeeeee;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 12px;
+  background: #111111;
+  color: var(--white);
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #888888;
+}
+
+.form-group input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+}
+
+.auth-message {
+  min-height: 22px;
+  font-size: 13px;
+  text-align: center;
+  color: #ff7b7b;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 18px rgba(212, 175, 55, 0.2);
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(212, 175, 55, 0.28);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+.auth-footer {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  color: #d0d0d0;
+}
+
+.auth-footer a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.auth-footer a:hover {
+  color: var(--gold-light);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #eeeeee;
+  margin-top: 50px;
+  border-top: 2px solid var(--gold);
+}
+
+.footer-bar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--text);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-social span {
+  position: relative;
+  padding-left: 14px;
+}
+
+.footer-social span::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: #bbb;
+}
+
+.footer-social span:last-child::after {
+  display: none;
+}
+
+.btn-scroll-top {
+  background-color: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-scroll-top:hover {
+  background-color: var(--gold-dark);
+}
+
+.trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.pagination button,
+.pagination a {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--gold);
+  background-color: var(--white);
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pagination button:hover,
+.pagination a:hover,
+.pagination .active {
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  header > nav {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .navbar-items {
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  .product-detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail-image {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 14px 16px;
+  }
+
+  .logo-on-header,
+  .navbar-items,
+  .profile-icon,
+  .navbar-in-header-t {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-items {
+    gap: 8px;
+  }
+
+  .navbar-item {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .text-on-the-left-logo {
+    font-size: 13px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .rooms-container,
+  .room-container,
+  .product-container,
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .room-img {
+    height: 200px;
+  }
+
+  .room-cart h2 {
+    font-size: 18px;
+  }
+
+  .room-price-and-btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .room-price-btn {
+    width: 100%;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .trust-badges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 14px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+
+  .text-on-the-left-logo {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .navbar-item {
+    width: 100%;
+  }
+
+  .rooms-container,
+  .room-container,
+  .product-container,
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .room-img {
+    height: 220px;
+  }
+
+  .auth-box {
+    margin: 30px 14px;
+    padding: 24px 18px;
+  }
+
+  .auth-header h1 {
+    font-size: 24px;
+  }
+
+  .auth-header p {
+    font-size: 13px;
+  }
+
+  .product-detail-content {
+    padding: 20px;
+  }
+
+  .product-detail-title {
+    font-size: 24px;
+  }
+
+  .product-detail-price {
+    font-size: 20px;
+  }
+
+  .product-detail-description {
+    font-size: 14px;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-social span {
+    padding-left: 0;
+  }
+
+  .footer-social span::after {
+    display: none;
+  }
+}

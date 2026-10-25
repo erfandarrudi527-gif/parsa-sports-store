@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ارتباط با ما | پوشاک و تجهیزات ورزشی ولیعصر</title>
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin-top: 30px;
+    }
+    .contact-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-info-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html" class="active"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="login.html" class="btn-auth-nav">
+            <i class="ph ph-user"></i> <span>ورود / ثبت‌نام</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو"><i class="ph ph-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container section-padding">
+    <div class="section-title">
+      <h2>ارتباط با فروشگاه ولیعصر</h2>
+      <p>مشاوران ما آماده پاسخگویی به تمامی سوالات شما هستند</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 24px;">اطلاعات تماس و آدرس</h3>
+        
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="ph ph-phone-call"></i></div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">شماره همراه و واتساپ:</span>
+            <strong style="font-size: 1.15rem; color: var(--primary);">۰۹۳۰۶۳۹۷۷۱۰</strong>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="ph ph-map-pin"></i></div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">آدرس فروشگاه حضوری:</span>
+            <strong style="font-size: 1rem;">مشهد، خیابان ولیعصر، پلاک ۱۲، فروشگاه ورزشی ولیعصر</strong>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="ph ph-clock"></i></div>
+          <div>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">ساعات کاری:</span>
+            <strong style="font-size: 1rem;">همه‌روزه از ساعت ۹:۰۰ الی ۲۱:۳۰ (به‌جز ایام تعطیل)</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 20px;">ارسال پیام مستقیم</h3>
+        <form onsubmit="event.preventDefault(); window.showToast('پیام شما با موفقیت ارسال شد.', 'success'); this.reset();">
+          <div class="form-group">
+            <label>نام کامل شما</label>
+            <input type="text" placeholder="مثلا: رضا احمدی" required style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-sm);" />
+          </div>
+          <div class="form-group" style="margin-top:14px;">
+            <label>شماره تماس</label>
+            <input type="text" placeholder="0915..." required style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-sm);" />
+          </div>
+          <div class="form-group" style="margin-top:14px;">
+            <label>متن پیام شما</label>
+            <textarea rows="4" placeholder="سوال یا نظر خود را بنویسید..." required style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-sm);"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:20px; height:46px;">
+            ارسال پیام <i class="ph ph-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>تمامی حقوق محفوظ است © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

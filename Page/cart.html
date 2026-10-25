@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سبد خرید | پوشاک و تجهیزات ورزشی ولیعصر</title>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .cart-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .cart-items-wrapper {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .cart-table-header {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1.5fr 1fr 40px;
+      padding: 12px 16px;
+      background-color: var(--surface-alt);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    
+    .cart-item-row {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1.5fr 1fr 40px;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 10px;
+    }
+    
+    .cart-item-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background-color: var(--surface-alt);
+    }
+    .cart-item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .cart-item-size {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    .remove-btn {
+      background: none;
+      color: var(--danger);
+      font-size: 1.25rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .remove-btn:hover { transform: scale(1.15); }
+    
+    /* Cart Summary Card */
+    .cart-summary-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .summary-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .summary-row.total {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+      margin-top: 16px;
+    }
+    
+    .coupon-box {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+    }
+    .coupon-box input {
+      flex-grow: 1;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .coupon-box button {
+      padding: 10px 16px;
+      background-color: var(--text-main);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .cart-page-layout { grid-template-columns: 1fr; }
+      .cart-table-header { display: none; }
+      .cart-item-row { grid-template-columns: 1fr; text-align: center; }
+      .cart-item-info { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Announcement -->
+  <div class="top-announcement">
+    <div class="container">
+      <span><i class="ph ph-sparkle"></i> کد تخفیف ویژه:</span> استفاده از کد <b>VALIASR10</b> برای دریافت ۱۰٪ تخفیف خرید آنلاین!
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو فروشگاه ولیعصر" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn active" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="login.html" class="btn-auth-nav">
+            <i class="ph ph-user"></i> <span>ورود / ثبت‌نام</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cart Page Content -->
+  <div class="container section-padding">
+    <div class="section-title">
+      <h2>سبد خرید شما</h2>
+      <p>محصولات انتخاب شده جهت فرایند ثبت سفارش و پرداخت</p>
+    </div>
+
+    <div class="cart-page-layout">
+      <!-- Items Container -->
+      <div class="cart-items-wrapper">
+        <div class="cart-table-header">
+          <span>نام و مشخصات محصول</span>
+          <span>قیمت واحد</span>
+          <span>تعداد</span>
+          <span>جمع کل</span>
+          <span>حذف</span>
+        </div>
+
+        <div id="cart-items-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="cart-summary-card">
+        <h3 class="summary-title">خلاصه صورت‌حساب</h3>
+        
+        <div class="summary-row">
+          <span>جمع کل اقلام:</span>
+          <span id="summary-subtotal">۰ تومان</span>
+        </div>
+
+        <div class="summary-row">
+          <span>تخفیف کدهای هدیه:</span>
+          <span id="summary-discount" style="color: var(--danger);">۰ تومان</span>
+        </div>
+
+        <div class="summary-row">
+          <span>هزینه ارسال پستی:</span>
+          <span id="summary-shipping">رایگان</span>
+        </div>
+
+        <!-- Coupon input -->
+        <div class="coupon-box">
+          <input type="text" id="coupon-input" placeholder="کد تخفیف (مثلا: VALIASR10)" />
+          <button type="button" onclick="applyCoupon()">اعمال</button>
+        </div>
+
+        <div class="summary-row total">
+          <span>مبلغ قابل پرداخت:</span>
+          <span id="summary-total" style="color: var(--primary);">۰ تومان</span>
+        </div>
+
+        <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 20px; height: 50px;" onclick="proceedToCheckout()">
+          <i class="ph ph-credit-card"></i> تکمیل و ثبت نهایی سفارش
+        </button>
+
+        <a href="products.html" style="display: block; text-align: center; margin-top: 14px; font-size: 0.88rem; color: var(--text-muted);">
+          <i class="ph ph-arrow-right"></i> ادامه خرید از فروشگاه
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>تمامی حقوق این وب‌سایت متعلق به فروشگاه پوشاک ورزشی ولیعصر (پارسا) می‌باشد. © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+    });
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const cart = window.cartStore.getCart();
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 60px 20px;">
+            <i class="ph ph-shopping-cart" style="font-size: 3.5rem; color: var(--text-light); margin-bottom: 14px; display: block;"></i>
+            <h3 style="font-size: 1.25rem; font-weight: 700;">سبد خرید شما خالی است!</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 10px 0 20px;">می‌توانید برای مشاهده محصولات جدید به صفحه فروشگاه مراجعه کنید.</p>
+            <a href="products.html" class="btn-primary" style="display: inline-flex;">
+              <i class="ph ph-shopping-bag"></i> مشاهده فروشگاه
+            </a>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map(item => {
+          const imgPath = getCorrectImagePath(item.image);
+          const itemTotal = item.price * item.quantity;
+
+          return `
+            <div class="cart-item-row">
+              <div class="cart-item-info">
+                <img src="${imgPath}" class="cart-item-img" alt="${item.name}" onError="this.src='https://via.placeholder.com/80?text=Item'"/>
+                <div>
+                  <h4 class="cart-item-title">${item.name}</h4>
+                  <span class="cart-item-size">سایز: ${item.size || 'L'}</span>
+                </div>
+              </div>
+
+              <div style="font-weight: 700; font-size: 0.95rem;">${formatPrice(item.price)}</div>
+
+              <div class="qty-counter" style="height: 36px;">
+                <button class="qty-btn" onclick="updateQty(${item.id}, '${item.size}', ${item.quantity - 1})">-</button>
+                <input type="text" class="qty-input" value="${item.quantity}" readonly style="width: 36px;" />
+                <button class="qty-btn" onclick="updateQty(${item.id}, '${item.size}', ${item.quantity + 1})">+</button>
+              </div>
+
+              <div style="font-weight: 800; color: var(--primary); font-size: 1.05rem;">${formatPrice(itemTotal)}</div>
+
+              <button class="remove-btn" onclick="removeItem(${item.id}, '${item.size}')" title="حذف کالا">
+                <i class="ph ph-trash"></i>
+              </button>
+            </div>
+          `;
+        }).join('');
+      }
+
+      updateSummary();
+    }
+
+    function updateQty(id, size, newQty) {
+      window.cartStore.updateQuantity(id, size, newQty);
+      renderCart();
+    }
+
+    function removeItem(id, size) {
+      window.cartStore.removeItem(id, size);
+      renderCart();
+    }
+
+    function updateSummary() {
+      const summary = window.cartStore.getTotal();
+      document.getElementById('summary-subtotal').textContent = formatPrice(summary.subtotal);
+      document.getElementById('summary-discount').textContent = summary.discountAmount > 0 ? formatPrice(summary.discountAmount) : '۰ تومان';
+      document.getElementById('summary-shipping').textContent = summary.shipping === 0 ? 'رایگان (خرید بالای ۵۰۰ک)' : formatPrice(summary.shipping);
+      document.getElementById('summary-total').textContent = formatPrice(summary.total);
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('coupon-input').value;
+      if (!code) return;
+
+      const res = window.cartStore.applyDiscountCode(code);
+      if (res.success) {
+        window.showToast(res.message, 'success');
+        updateSummary();
+      } else {
+        window.showToast(res.message, 'error');
+      }
+    }
+
+    function proceedToCheckout() {
+      const cart = window.cartStore.getCart();
+      if (cart.length === 0) {
+        window.showToast('سبد خرید شما خالی است', 'warning');
+        return;
+      }
+
+      const user = window.authStore.getCurrentUser();
+      const userName = user ? user.fullName : 'مشتری گرامی';
+
+      if (confirm(`جناب ${userName} عزیز، آیا مایل به ثبت نهایی سفارش به مبلغ ${document.getElementById('summary-total').textContent} هستید؟`)) {
+        window.showToast('سفارش شما با موفقیت ثبت شد. همکاران ما جهت هماهنگی با شما تماس خواهند گرفت.', 'success');
+        window.cartStore.clearCart();
+        setTimeout(() => {
+          renderCart();
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

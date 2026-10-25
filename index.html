@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فروشگاه پوشاک و تجهیزات ورزشی ولیعصر | مشهد</title>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+
+  <!-- Top Bar Announcement -->
+  <div class="top-announcement">
+    <div class="container">
+      <div>
+        <span class="highlight"><i class="ph ph-sparkle"></i> ارسال رایگان</span> خریدهای بالای ۵۰۰,۰۰۰ تومان به سراسر کشور | مشاور فروش: ۰۹۳۰۶۳۹۷۷۱۰
+      </div>
+      <div style="display: flex; gap: 16px; font-size: 0.8rem; color: #94a3b8;">
+        <span><i class="ph ph-clock"></i> پشتیبانی ۹ تا ۲۱</span>
+        <span><i class="ph ph-map-pin"></i> مشهد، خیابان ولیعصر</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Logo & Brand -->
+        <a href="index.html" class="logo-brand">
+          <img src="assets/image/logo.jpg" alt="لوگو" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>بزرگترین مرکز ملزومات ورزشی مشهد</p>
+          </div>
+        </a>
+
+        <!-- Header Live Search -->
+        <div class="header-search-bar">
+          <input type="text" id="header-search-input" class="header-search-input" placeholder="جستجوی تیشرت، مایو، اسکیت، دمبل..." autocomplete="off" />
+          <i class="ph ph-magnifying-glass header-search-icon"></i>
+          <div id="header-live-search-popup" class="live-search-popup"></div>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="index.html" class="active"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="Page/products.html"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="Page/about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="Page/phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <!-- Action Icons & Auth -->
+        <div class="header-actions">
+          <a href="Page/cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="Page/login.html" class="btn-auth-nav">
+            <i class="ph ph-user"></i> <span>ورود / ثبت‌نام</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="badge-hero"><i class="ph ph-trophy"></i> تخصصی‌ترین مرکز تجهیزات ورزشی و باشگاهی</span>
+          <h1 class="hero-title">
+            تجهیزات ورزشی حرفه‌ای، <br />
+            <span>با مناسب‌ترین قیمت در مشهد</span>
+          </h1>
+          <p class="hero-desc">
+            تامین‌کننده انواع تیشرت، ست‌های گرمکن باشگاهی و ملی، مایو شنا ضد کلر، دمبل و کش‌های پیلاتس با تضمین کیفیت پارچه و ارسال اکسپرس.
+          </p>
+          <div class="hero-btns">
+            <a href="Page/products.html" class="btn-primary">
+              <i class="ph ph-shopping-bag"></i> مشاهده و خرید محصولات
+            </a>
+            <a href="Page/phon number .html" class="btn-secondary">
+              <i class="ph ph-phone-call"></i> مشاوره رایگان انتخاب سایز
+            </a>
+          </div>
+        </div>
+
+        <!-- Slider Showcase -->
+        <div class="hero-slider-wrap">
+          <div class="hero-slide active">
+            <img src="assets/image/bnier.jpg" alt="بنر اصلی" onError="this.src='assets/image/lebas1.jpg'" />
+          </div>
+          <div class="hero-slide">
+            <img src="assets/image/lebas2.jpg" alt="ست ورزشی" />
+          </div>
+          <div class="hero-slide">
+            <img src="assets/image/top1.jpg" alt="تاپ باشگاهی" />
+          </div>
+          <div class="hero-slide">
+            <img src="assets/image/اسکیت.jpg" alt="اسکیت حرفه‌ای" />
+          </div>
+
+          <div class="floating-offer-badge">
+            <i class="ph ph-sparkle" style="font-size: 1.8rem; color: var(--accent);"></i>
+            <div>
+              <strong style="font-size: 0.95rem; display: block;">۱۰٪ تخفیف اولین سفارش!</strong>
+              <span style="font-size: 0.78rem; color: #94a3b8;">کد تخفیف: <b>VALIASR10</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Bar -->
+  <section class="features-bar reveal-on-scroll">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="ph ph-shield-check"></i></div>
+          <div class="feature-text">
+            <h4>ضمانت ۱۰۰٪ اصالت کالا</h4>
+            <p>تضمین پارچه و دوخت استاندارد</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="ph ph-truck"></i></div>
+          <div class="feature-text">
+            <h4>ارسال سریع و رایگان</h4>
+            <p>سفارشات بالای ۵۰۰ هزار تومان</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="ph ph-arrows-counter-clockwise"></i></div>
+          <div class="feature-text">
+            <h4>۷ روز ضمانت تعویض</h4>
+            <p>امکان تعویض راحت سایز کالا</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="ph ph-headset"></i></div>
+          <div class="feature-text">
+            <h4>پشتیبانی دائمی آنلاین</h4>
+            <p>مشاوره تخصصی قبل از خرید</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flash Sale & Countdown Timer -->
+  <div class="container reveal-on-scroll">
+    <div class="flash-sale-banner">
+      <div class="flash-info">
+        <h2><i class="ph ph-lightning" style="color: var(--accent);"></i> پیشنهاد شگفت‌انگیز روز</h2>
+        <p>تخفیف‌های استثنایی روی منتخب‌ترین محصولات ورزشی - فرصت محدود!</p>
+      </div>
+
+      <div class="countdown-box">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-seconds">۰۰</span>
+          <span class="countdown-label">ثانیه</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-minutes">۰۰</span>
+          <span class="countdown-label">دقیقه</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">۰۰</span>
+          <span class="countdown-label">ساعت</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+  <section class="section-padding reveal-on-scroll">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">
+          <h2>دسته‌بندی‌های محبوب</h2>
+          <p>محصول مورد نظر خود را سریع‌تر انتخاب کنید</p>
+        </div>
+        <a href="Page/products.html" class="link-more">مشاهده همه دسته‌ها <i class="ph ph-arrow-left"></i></a>
+      </div>
+
+      <div class="categories-grid">
+        <a href="Page/products.html?category=clothing" class="category-card">
+          <div class="category-icon-box"><i class="ph ph-t-shirt"></i></div>
+          <h3>پوشاک ورزشی</h3>
+          <p>تیشرت، ست گرمکن و شلوار</p>
+        </a>
+        <a href="Page/products.html?category=tops" class="category-card">
+          <div class="category-icon-box"><i class="ph ph-gender-female"></i></div>
+          <h3>تاپ و نیم‌تنه</h3>
+          <p>تاپ، کراپ و نیم‌تنه باشگاهی</p>
+        </a>
+        <a href="Page/products.html?category=swimwear" class="category-card">
+          <div class="category-icon-box"><i class="ph ph-waves"></i></div>
+          <h3>شنا و مایو</h3>
+          <p>مایوهای مردانه و زنانه ضد کلر</p>
+        </a>
+        <a href="Page/products.html?category=equipment" class="category-card">
+          <div class="category-icon-box"><i class="ph ph-barbell"></i></div>
+          <h3>تجهیزات ورزشی</h3>
+          <p>دمبل، کش پیلاتس، اسکیت و هولاهوپ</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section-padding" style="background-color: var(--surface);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-title">
+          <h2>محصولات ویژه و پرفروش</h2>
+          <p>منتخب محبوب‌ترین پوشاک و تجهیزات ورزشی سال</p>
+        </div>
+        <a href="Page/products.html" class="link-more">مشاهده همه محصولات <i class="ph ph-arrow-left"></i></a>
+      </div>
+
+      <div class="products-grid" id="featured-products-container">
+        <!-- Rendered dynamically by JS with reveal animations -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="faq-section reveal-on-scroll">
+    <div class="container">
+      <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="display: inline-block;">سوالات متداول مشتریان</h2>
+        <p>پاسخ به متداول‌ترین سوالات شما درباره نحوه خرید و ارسال</p>
+      </div>
+
+      <div class="accordion-wrapper">
+        <div class="accordion-item active">
+          <div class="accordion-header">
+            <span>چگونه از مناسب بودن سایز پوشاک مطمئن شوم؟</span>
+            <i class="ph ph-caret-down"></i>
+          </div>
+          <div class="accordion-body">
+            تمامی محصولات ما دارای راهنمای دقیق سایزبندی استاندارد هستند. همچنین قبل از ثبت نهایی می‌توانید از طریق واتساپ یا تلفن با مشاوران ما جهت انتخاب دقیق‌ترین سایز تماس بگیرید. در صورت لزوم، تا ۷ روز امکان تعویض سایز وجود دارد.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>مدت زمان ارسال سفارشات به مشهد و سایر شهرها چقدر است؟</span>
+            <i class="ph ph-caret-down"></i>
+          </div>
+          <div class="accordion-body">
+            سفارشات درون شهری مشهد ظرف مدت ۲ الی ۴ ساعت کاری از طریق پیک ارسال می‌شوند. سفارشات سایر استان‌ها و شهرها نیز از طریق پست پیشتاز ظرف ۲ الی ۴ روز کاری تحویل داده می‌شوند.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>آیا امکان خرید حضوری در فروشگاه وجود دارد؟</span>
+            <i class="ph ph-caret-down"></i>
+          </div>
+          <div class="accordion-body">
+            بله، شما عزیزان می‌توانید همه‌روزه از ساعت ۹:۰۰ الی ۲۱:۳۰ به فروشگاه حضوری ما واقع در مشهد، خیابان ولیعصر مراجعه نمایید.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Support Button (WhatsApp) -->
+  <a href="https://wa.me/989306397710" target="_blank" class="floating-support-btn" title="پشتیبانی آنلاین واتساپ">
+    <i class="ph-fill ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>پوشاک ورزشی ولیعصر</h3>
+          <p class="footer-desc">
+            تامین‌کننده تخصصی انواع لباس باشگاهی، مایو شنا و لوازم ورزشی در مشهد با تضمین پارچه اعلا و نازل‌ترین قیمت.
+          </p>
+          <ul class="footer-contact-info">
+            <li><i class="ph ph-map-pin"></i> مشهد، خیابان ولیعصر، فروشگاه ولیعصر</li>
+            <li><i class="ph ph-phone"></i> ۰۹۳۰۶۳۹۷۷۱۰</li>
+            <li><i class="ph ph-envelope"></i> info@valiasrsport.ir</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>دسترسی سریع</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="Page/products.html">فروشگاه محصولات</a></li>
+            <li><a href="Page/cart.html">سبد خرید</a></li>
+            <li><a href="Page/about.html">درباره ما</a></li>
+            <li><a href="Page/phon number .html">تماس با ما</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>دسته‌بندی‌ها</h3>
+          <ul class="footer-links">
+            <li><a href="Page/products.html?category=clothing">پوشاک ورزشی</a></li>
+            <li><a href="Page/products.html?category=tops">تاپ و نیم‌تنه</a></li>
+            <li><a href="Page/products.html?category=swimwear">شنا و مایو</a></li>
+            <li><a href="Page/products.html?category=equipment">تجهیزات ورزشی</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>خبرنامه و تخفیف‌ها</h3>
+          <p style="font-size:0.88rem; margin-bottom:16px;">برای دریافت جدیدترین کدهای تخفیف ایمیل خود را ثبت کنید:</p>
+          <form onsubmit="event.preventDefault(); window.showToast('ایمیل شما با موفقیت ثبت شد', 'success'); this.reset();" style="display:flex; gap:8px;">
+            <input type="email" placeholder="ایمیل شما..." required style="padding:10px 14px; border-radius:var(--radius-sm); background:#1e293b; border:1px solid #334155; color:white; flex-grow:1;" />
+            <button type="submit" class="btn-primary" style="padding:10px 16px;">عضویت</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>تمامی حقوق وب‌سایت متعلق به <strong>فروشگاه پوشاک ورزشی ولیعصر (پارسا)</strong> می‌باشد. © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/auth-store.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('featured-products-container');
+      if (container) {
+        const featured = PRODUCTS.filter(p => p.isFeatured).slice(0, 8);
+        container.innerHTML = featured.map((p, idx) => createProductCardHtml(p, idx)).join('');
+        initScrollReveal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فروشگاه محصولات | پوشاک و تجهیزات ورزشی ولیعصر</title>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .page-banner h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .page-banner p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+    
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+    }
+    
+    .filter-sidebar {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .filter-group {
+      margin-bottom: 24px;
+    }
+    .filter-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background-color: var(--bg);
+    }
+    .search-box i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    
+    .category-list li {
+      margin-bottom: 8px;
+    }
+    .category-btn {
+      width: 100%;
+      text-align: right;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      background: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    .category-btn:hover, .category-btn.active {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+    
+    .sort-bar {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .sort-options {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sort-btn {
+      background: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+    .sort-btn.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .shop-layout { grid-template-columns: 1fr; }
+      .filter-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Announcement -->
+  <div class="top-announcement">
+    <div class="container">
+      <span><i class="ph ph-sparkle"></i> ارسال سریع:</span> سفارشات بالای ۵۰۰ هزار تومان مجانی ارسال می‌شوند!
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو فروشگاه ولیعصر" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html" class="active"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="login.html" class="btn-auth-nav">
+            <i class="ph ph-user"></i> <span>ورود / ثبت‌نام</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو">
+            <i class="ph ph-list"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>فروشگاه جامع پوشاک و تجهیزات ورزشی</h1>
+      <p>محصولات خود را انتخاب و با بالاترین کیفیت درب منزل تحویل بگیرید</p>
+    </div>
+  </section>
+
+  <!-- Main Shop Area -->
+  <section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+      <div class="shop-layout">
+        
+        <!-- Sidebar Filter -->
+        <aside class="filter-sidebar">
+          <div class="filter-group">
+            <div class="filter-title"><span>جستجوی محصول</span> <i class="ph ph-magnifying-glass"></i></div>
+            <div class="search-box">
+              <input type="text" id="search-input" placeholder="نام محصول را بنویسید..." />
+              <i class="ph ph-magnifying-glass"></i>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-title"><span>دسته‌بندی‌ها</span> <i class="ph ph-funnel"></i></div>
+            <ul class="category-list">
+              <li><button class="category-btn active" data-category="all">همه محصولات <span id="count-all">(۰)</span></button></li>
+              <li><button class="category-btn" data-category="clothing">پوشاک ورزشی <span id="count-clothing">(۰)</span></button></li>
+              <li><button class="category-btn" data-category="tops">تاپ و نیم‌تنه <span id="count-tops">(۰)</span></button></li>
+              <li><button class="category-btn" data-category="swimwear">شنا و مایو <span id="count-swimwear">(۰)</span></button></li>
+              <li><button class="category-btn" data-category="equipment">تجهیزات ورزشی <span id="count-equipment">(۰)</span></button></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Products Grid -->
+        <main class="shop-main">
+          <!-- Sort Bar -->
+          <div class="sort-bar">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);" id="products-count-text">در حال بارگذاری محصولات...</span>
+            <div class="sort-options">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">مرتب‌سازی:</span>
+              <button class="sort-btn active" data-sort="newest">جدیدترین</button>
+              <button class="sort-btn" data-sort="price-low">ارزان‌ترین</button>
+              <button class="sort-btn" data-sort="price-high">گران‌ترین</button>
+              <button class="sort-btn" data-sort="rating">محبوب‌ترین</button>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="products-grid" id="products-grid-container">
+            <!-- Rendered by JS -->
+          </div>
+        </main>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>پوشاک ورزشی ولیعصر</h3>
+          <p class="footer-desc">فروشگاه تخصصی ملزومات ورزشی، پوشاک باشگاهی و لوازم شنا در مشهد.</p>
+          <ul class="footer-contact-info">
+            <li><i class="ph ph-map-pin"></i> مشهد، خیابان ولیعصر</li>
+            <li><i class="ph ph-phone"></i> ۰۹۳۰۶۳۹۷۷۱۰</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>دسترسی سریع</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">صفحه اصلی</a></li>
+            <li><a href="products.html">فروشگاه</a></li>
+            <li><a href="cart.html">سبد خرید</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>دسته‌بندی‌ها</h3>
+          <ul class="footer-links">
+            <li><a href="products.html?category=clothing">پوشاک ورزشی</a></li>
+            <li><a href="products.html?category=tops">تاپ و نیم‌تنه</a></li>
+            <li><a href="products.html?category=swimwear">شنا و مایو</a></li>
+            <li><a href="products.html?category=equipment">تجهیزات ورزشی</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>پشتیبانی</h3>
+          <p>پاسخگویی روزهای کاری از ساعت ۹ الی ۲۱</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>تمامی حقوق محفوظ است © ۱۴۰۳</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+  
+  <script>
+    let currentCategory = 'all';
+    let currentSort = 'newest';
+    let searchQuery = '';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse URL parameters for initial category filter
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('category');
+      if (catParam) {
+        currentCategory = catParam;
+      }
+
+      updateCategoryCounts();
+      renderProducts();
+
+      // Category click handler
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.dataset.category === currentCategory) {
+          document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.category;
+          renderProducts();
+        });
+      });
+
+      // Sort click handler
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentSort = btn.dataset.sort;
+          renderProducts();
+        });
+      });
+
+      // Search input handler
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          renderProducts();
+        });
+      }
+    });
+
+    function updateCategoryCounts() {
+      document.getElementById('count-all').textContent = `(${PRODUCTS.length})`;
+      document.getElementById('count-clothing').textContent = `(${PRODUCTS.filter(p=>p.category==='clothing').length})`;
+      document.getElementById('count-tops').textContent = `(${PRODUCTS.filter(p=>p.category==='tops').length})`;
+      document.getElementById('count-swimwear').textContent = `(${PRODUCTS.filter(p=>p.category==='swimwear').length})`;
+      document.getElementById('count-equipment').textContent = `(${PRODUCTS.filter(p=>p.category==='equipment').length})`;
+    }
+
+    function renderProducts() {
+      const container = document.getElementById('products-grid-container');
+      const countText = document.getElementById('products-count-text');
+
+      let list = [...PRODUCTS];
+
+      // Filter by category
+      if (currentCategory !== 'all') {
+        list = list.filter(p => p.category === currentCategory);
+      }
+
+      // Filter by search query
+      if (searchQuery) {
+        list = list.filter(p => p.name.toLowerCase().includes(searchQuery) || p.description.toLowerCase().includes(searchQuery));
+      }
+
+      // Sort
+      if (currentSort === 'newest') {
+        list.sort((a, b) => b.id - a.id);
+      } else if (currentSort === 'price-low') {
+        list.sort((a, b) => a.price - b.price);
+      } else if (currentSort === 'price-high') {
+        list.sort((a, b) => b.price - a.price);
+      } else if (currentSort === 'rating') {
+        list.sort((a, b) => b.rating - a.rating);
+      }
+
+      countText.textContent = `نمایش ${list.length} محصول از مجموعه کامل`;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; background: var(--surface); border-radius: var(--radius-md); border: 1px dashed var(--border);">
+            <i class="ph ph-magnifying-glass-plus" style="font-size: 3rem; color: var(--text-light); margin-bottom: 12px; display: block;"></i>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-main);">محصولی یافت نشد!</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">لطفاً عبارت دیگری را جستجو کنید یا فیلترها را تغییر دهید.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = list.map(createProductCardHtml).join('');
+      }
+    }
+  </script>
+</body>
+</html>

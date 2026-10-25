@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ورود به حساب کاربری | پوشاک ورزشی ولیعصر</title>
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../style/main.css" />
+  <style>
+    .auth-card-wrapper {
+      max-width: 440px;
+      margin: 60px auto;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .auth-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .auth-header h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .auth-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .input-with-icon {
+      position: relative;
+    }
+    .input-with-icon input {
+      width: 100%;
+      padding: 12px 14px 12px 42px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background-color: var(--bg);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .input-with-icon input:focus {
+      border-color: var(--primary);
+      background-color: var(--surface);
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+    .input-with-icon i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+    
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo-brand">
+          <img src="../assets/image/logo.jpg" alt="لوگو" class="logo-img" onError="this.src='https://via.placeholder.com/60?text=VALIASR'"/>
+          <div class="logo-text">
+            <h1>پوشاک ورزشی ولیعصر</h1>
+            <p>مشهد - خیابان ولیعصر</p>
+          </div>
+        </a>
+
+        <ul class="navbar-items">
+          <li class="navbar-item"><a href="../index.html"><i class="ph ph-house"></i> صفحه اصلی</a></li>
+          <li class="navbar-item"><a href="products.html"><i class="ph ph-shopping-bag"></i> فروشگاه محصولات</a></li>
+          <li class="navbar-item"><a href="about.html"><i class="ph ph-info"></i> درباره ما</a></li>
+          <li class="navbar-item"><a href="phon number .html"><i class="ph ph-phone"></i> تماس با ما</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="cart.html" class="icon-btn" title="سبد خرید">
+            <i class="ph ph-shopping-cart-simple"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="منو"><i class="ph ph-list"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Form -->
+  <div class="container">
+    <div class="auth-card-wrapper">
+      <div class="auth-header">
+        <h2>ورود به حساب کاربری</h2>
+        <p>برای پیگیری سفارشات و خرید آسان وارد شوید</p>
+      </div>
+
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>شماره موبایل یا ایمیل</label>
+          <div class="input-with-icon">
+            <input type="text" id="login-identifier" placeholder="مثلا: 09306397710" required />
+            <i class="ph ph-user"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>رمز عبور</label>
+          <div class="input-with-icon">
+            <input type="password" id="login-password" placeholder="••••••••" required />
+            <i class="ph ph-lock"></i>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" checked /> مرا به خاطر بسپار
+          </label>
+          <a href="#" style="color: var(--primary);">رمز عبور را فراموش کرده‌اید؟</a>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; height: 48px;">
+          ورود به حساب <i class="ph ph-sign-in"></i>
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
+        حساب کاربری ندارید؟ <a href="register.html" style="color: var(--primary); font-weight: 700;">ثبت‌نام در سایت</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cart-store.js"></script>
+  <script src="../js/auth-store.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const id = document.getElementById('login-identifier').value.trim();
+      const pass = document.getElementById('login-password').value;
+
+      const res = window.authStore.login(id, pass);
+      if (res.success) {
+        window.showToast(res.message, 'success');
+        setTimeout(() => {
+          window.location.href = '../index.html';
+        }, 800);
+      } else {
+        window.showToast(res.message, 'error');
+      }
+    }
+  </script>
+</body>
+</html>
